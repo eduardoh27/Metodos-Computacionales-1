@@ -14,23 +14,19 @@ def change_phrase(phrase: str)->str:
 def intercalar(palabra, bit):
     intercalada = ""
     if bit == 0:
-        i = 0
-        while i < len(palabra):
+        for i in range(len(palabra)):
             if i%2 == 0:
                 letra = palabra[i].upper()
             else:
                 letra = palabra[i].lower()
             intercalada += letra
-            i += 1
     else:
-        i = 0
-        while i < len(palabra):
+        for i in range(len(palabra)):
             if i%2 != 0:
                 letra = palabra[i].upper()
             else:
                 letra = palabra[i].lower()
             intercalada += letra
-            i += 1
     return intercalada
 
 print(change_phrase("Hello World"))
