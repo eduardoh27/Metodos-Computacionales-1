@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 def poly(x):
     return x + (np.e**(-2*x)) - 1
 
-xi, xf, Npoints = 0.1,4,20
+xi, xf, Npoints = -1,4,5
 h = (xf-xi)/float(Npoints)
 
 x = np.linspace(xi,xf,Npoints)
