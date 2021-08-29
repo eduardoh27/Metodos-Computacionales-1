@@ -11,9 +11,20 @@ x = np.linspace(xi,xf,Npoints)
 y = poly(x)
 
 plt.plot(x,y)
-plt.show()
+#plt.show()
 
-def NewtonMethod(f,df,xn,error,it,precision=0.000001,iterations=1000):
+
+def Derivada(f,x,h):
+    
+    d = 0.
+    
+    if h!=0:
+        d = (f(x+h)-f(x-h))/(2*h)
+        
+    return d
+
+
+def NewtonMethod(f,df,xn,error,it,precision=0.000001,iterations=100000):
     
     h = 1.0e-4
     
@@ -34,3 +45,6 @@ def NewtonMethod(f,df,xn,error,it,precision=0.000001,iterations=1000):
         it += 1
     
     return xn1
+
+solution_a = NewtonMethod(poly, Derivada, 2, 10, it = 1)
+print(solution_a)
