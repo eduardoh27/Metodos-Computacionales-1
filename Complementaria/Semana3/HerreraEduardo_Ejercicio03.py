@@ -50,7 +50,7 @@ for i in range(len(c)):
 fig = plt.figure(figsize=(6,5))
 ax = fig.add_subplot(1,1,1)
 plt.plot(c,x)
-ax.set_title(r'x = 1 - e^(-cx)',fontsize=16)
+ax.set_title(r'$x = 1 - e^{-cx}$',fontsize=16)
 ax.set_xlabel(r'c',fontsize=14)
 ax.set_ylabel(r'x',fontsize=14)
 plt.savefig('HerreraEduardo_Ejercicio3.png')
