@@ -107,10 +107,15 @@ def GaussLaguerre(n):
 
 
 
+
+
+print("\nTarea Métodos Computacionales 1 - Semana 5 Punto 2\n")
+
+print("Punto 2a:")
 # Parte a
 n = 3
 integral = GaussLaguerre(n)
-print(f"El valor de la integral con n={n} es: {integral}") 
+print(f"El valor de la integral con n={n} es: {integral}\n") 
 
 
 # Parte b
