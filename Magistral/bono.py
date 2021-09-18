@@ -69,7 +69,7 @@ psi =  lambda x, n : (1/np.sqrt((2**n) * np.math.factorial(n))) * ((1/np.pi)**(1
 f = lambda x:  psi(x,n=1)**2 * (x**2) / (np.exp(-1*x**2))
 """
 # Cálculo con los puntos y pesos de numpy
-
+sd
 deg = 1
 x, w = np.polynomial.hermite.hermgauss(deg)
 for i in range(deg):    
