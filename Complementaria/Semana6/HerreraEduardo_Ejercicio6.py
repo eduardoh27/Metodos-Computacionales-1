@@ -1,12 +1,11 @@
 import numpy as np
 
-M = np.array( [[4,-1,-1,-1], [-1,3,0,-1], [-1,0,3,-1], [-1,-1,-1,4]])
-
+M = np.array( [[4,-1,-1,-1], 
+               [-1,3,0,-1], 
+               [-1,0,3,-1], 
+               [-1,-1,-1,4]])
+               
 b = np.array([5,0,5,0])
-
-sol = np.linalg.solve(M,b)
-print(f"La solución oficial es {sol}")
-
 
 def GetGaussJordan(M_,b_):
 
@@ -33,12 +32,10 @@ def GetGaussJordan(M_,b_):
             x[i] = (x[i]-A[i,j]*x[j])  
         x[i] /= A[i,i]    
         
-    return x,A,b
+    return x
 
-Xsol1, NewM, Newb = GetGaussJordan(M,b)
-print(f"La solución con lo de clase es {Xsol1}")
+sol = GetGaussJordan(M,b)
 
+V_one, V_two, V_three, V_four = (round(sol[n],4) for n in range(len(sol)))
 
-V_one, V_two, V_three, V_four = 0,0,0,0
-
-print(f"V_one = {V_one}, V_two = {V_two},V_three = {V_three}, V_four = {V_four}")
+print(f"V_one = {V_one}, V_two = {V_two}, V_three = {V_three}, V_four = {V_four}")

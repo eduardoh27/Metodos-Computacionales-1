@@ -35,6 +35,7 @@ def MonteCarloMethod (iteraciones):
         i+=1
     print(circulo/cuadrado)
 
+#MonteCarloMethod(100000000)
 
-
-MonteCarloMethod(100000000)
+a = np.zeros(4)
+print(a)
