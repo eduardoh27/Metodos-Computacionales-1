@@ -204,8 +204,12 @@ plt.show()
 # Punto 5
 print('\nPunto 5\n')
 
+
+
 # Punto 6
 print('\nPunto 6\n')
+
+
 
 # Punto 1.2
 print('\nPunto 1.2\n')
