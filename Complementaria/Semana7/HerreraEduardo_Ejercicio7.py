@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 
 # Punto 1
 
-df = pd.read_csv("https://raw.githubusercontent.com/diegour1/CompMetodosComputacionales/main/DataFiles/world_pop.csv") 
+url = 'https://raw.githubusercontent.com/diegour1/CompMetodosComputacionales/main/DataFiles/world_pop.csv'
+df = pd.read_csv(url) 
 seleccionados = df.loc[(df['Entity'] == 'Our World In Data') & (df['Year'] >= 700) & (df['Year'] <= 1900)] 
 
 x = np.array(seleccionados['Year'])
