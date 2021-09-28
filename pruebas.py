@@ -31,11 +31,17 @@ def MonteCarloMethod (iteraciones):
         """if i % imprimir_cada == 0:
 
             pi = circulo / cuadrado
-            print(pi) """
+                print(pi) """
         i+=1
     print(circulo/cuadrado)
 
 #MonteCarloMethod(100000000)
 
-a = np.zeros(4)
-print(a)
+G1 = np.array([lambda x,y: np.log(x**2 + y**2) - np.sin(x*y) - np.log(2) - np.log(np.pi),
+     lambda x,y: np.exp(x-y) + np.cos(x*y)])
+print(G1[1](1.736083,1.804428))
+
+G2 = np.array([lambda x,y,z: 6*x - 2*np.cos(y*z) - 1,
+     lambda x,y,z: 9*y + np.sqrt(x**2 + np.sin(z) + 1.06) + 0.9,
+     lambda x,y,z: 60*z + 3*np.exp(-1*x*y) + 10*np.pi - 3])
+print(G2[2](0.4951447,-0.1996059, -0.5288260))

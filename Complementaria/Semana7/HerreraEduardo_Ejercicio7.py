@@ -33,6 +33,7 @@ ax.scatter(x, y, s=15)
 ax.plot(x1, p(x1), c='r')
 ax.set_xlabel(r'Year',fontsize=10)
 ax.set_ylabel(r'World population',fontsize=10)
+ax.set_title(r'Ajuste de grado 4',fontsize=13)
 plt.savefig('HerreraEduardo_grafica.png')
 plt.show()
 
