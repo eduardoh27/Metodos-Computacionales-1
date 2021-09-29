@@ -198,7 +198,7 @@ ax.set_title(r'curve_fit cuadrático', fontsize=14)
 fig.legend(loc='lower right') 
 plt.show()
 # 'COMPARAR???'
-
+# SÍ LO HICE CON MÍNIMOS CUADRADOS???????
 
 
 # Punto 5
