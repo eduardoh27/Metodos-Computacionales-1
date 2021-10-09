@@ -5,7 +5,6 @@ from tqdm import tqdm
 print('\nTarea Semana 8 - Métodos Computacionales 1')
 
 
-
 # Punto 1.1.1
 print('\n\nPunto 1.1.1:\n')
 
@@ -46,8 +45,6 @@ class MyRandom():
         return np.sqrt(Npoints)* np.abs(  np.mean(array**moment) - 1./(1.+moment) )
     
 
-
-    
 def numpyTestMethod(Npoints, moment):
 
     array = np.random.rand(Npoints)
@@ -55,7 +52,6 @@ def numpyTestMethod(Npoints, moment):
 
     return np.sqrt(Npoints)* np.abs( np.mean(array**moment) - 1./(1.+moment) )
 
-#print(np.random.rand(20))
 
 def FillPoints(seed_, method_, Npoints):
     
@@ -135,22 +131,10 @@ plt.show()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 # Punto 1.1.2
 print('\n\nPunto 1.1.2:\n')   
 k = 30
 N = int(1e4)
-
 
 def getCorrelacion(k, array):
     N = len(array)
@@ -159,51 +143,50 @@ def getCorrelacion(k, array):
         suma += array[i]*array[i+k]
     return suma/N
 
-#print(getCorrelacion(0, [1,2]))
-#print(getCorrelacion(0, [1]))
+Nsimple = FillPoints(165, 'simple', N)
+Nrand48 = FillPoints(695, 'drand48', N)
+arrayNumpy = np.random.rand(N)
 
-array = np.random.random_sample(N)
-array = np.random.rand(N)
-correlaciones = np.zeros(k+1)
-posicion = [x for x in range(0,k+1)]
+correlaciones1 = np.zeros(k)
+correlaciones2 = np.zeros(k)
+correlaciones3 = np.zeros(k)
 
+posicion = [x for x in range(1,k+1)]
 
-for i in range(k+1):
-    #print(getCorrelacion(i, array))
-    correlaciones[i] = getCorrelacion(i, array)
-
+for i in range(k):
+    correlaciones1[i] = getCorrelacion(i+1, Nsimple)
+    correlaciones2[i] = getCorrelacion(i+1, Nrand48)
+    correlaciones3[i] = getCorrelacion(i+1, arrayNumpy)
+    
 
 fig = plt.figure( figsize=(10,10) )
-ax1 = fig.add_subplot()
-ax1.plot(posicion, correlaciones)
-ax1.set_title('Generador Numpy111', fontsize = 12)
-ax1.set_xlabel('k-ésimo vecino')
+
+ax1 = fig.add_subplot(2,2,1)
+ax2 = fig.add_subplot(2,2,2)
+ax3 = fig.add_subplot(2,2,3)
+
+ax1.plot(posicion, correlaciones1)
+ax1.set_title('Generador Simple', fontsize = 12)
+#ax1.set_xlabel('k-ésimo vecino')
 ax1.set_ylabel('C(k)', fontsize = 11)
-ax1.set_ylim(0.2,0.4)
-plt.grid()
+ax1.set_ylim(0.2, 0.34)
+ax1.grid()
+
+ax2.plot(posicion, correlaciones2)
+ax2.set_title('Generador drand48', fontsize = 12)
+ax2.set_xlabel('k-ésimo vecino')
+#ax2.set_ylabel('C(k)', fontsize = 11)
+ax2.set_ylim(0.2, 0.34)
+ax2.grid()
+
+ax3.plot(posicion, correlaciones3)
+ax3.set_title('Generador Numpy', fontsize = 12)
+ax3.set_xlabel('k-ésimo vecino')
+ax3.set_ylabel('C(k)', fontsize = 11)
+ax3.set_ylim(0.2, 0.3)
+ax3.grid()
+
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
