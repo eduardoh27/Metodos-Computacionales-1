@@ -251,7 +251,7 @@ def GetRelaxation(omega, Nit = int(1e5), tolerancia = 1e-2):
     
     T = InitT()
     itmax = 0
-    print(f'w = {omega}')
+    print(f'w = {round(omega,1)}')
 
     for it in tqdm(range(Nit)):
         
@@ -292,5 +292,4 @@ ax.set_title(r'Optimization of the Over-relaxation Method', style='italic')
 plt.grid()
 plt.show()
 
-print(r'Si omega es mayor o igual a 2, el método diverge')
-
+print('Si omega es mayor o igual a 2, el método diverge\n')
