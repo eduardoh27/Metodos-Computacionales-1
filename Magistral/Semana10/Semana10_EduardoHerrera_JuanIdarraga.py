@@ -20,12 +20,12 @@ def main():
     probabilidades = np.zeros(len(personas))
     for i in range(len(personas)):
         probabilidades[i] = getProbability(personas[i])
-    
+
     fig = plt.figure()
     ax = fig.add_subplot()
     ax.set_ylabel('$P_n$', fontsize=14, style='italic')
     ax.set_xlabel('Personas', fontsize=15, style='italic')
-    ax.plot(personas, probabilidades, ".-")
+    ax.plot(personas, probabilidades, ".-", markersize=8)
     plt.grid()
     plt.show()
 
