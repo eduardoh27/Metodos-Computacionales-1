@@ -4,13 +4,17 @@ import pandas as pd
 import random
 from sklearn.linear_model import LinearRegression
 from scipy.stats import norm
+from tqdm import tqdm
 
 
-def getBootValues(X, Y, x_prueba, size = 40):
+def getBootValues(X, Y, x_prueba):
+
     indices = np.arange(len(X))
+    size = len(X)
     muestra = random.choices(indices, k=size)
     X_muestra = []
     Y_muestra = []
+
     for i in muestra:
         X_muestra.append(X[i])
         Y_muestra.append(Y[i])
@@ -31,7 +35,7 @@ def GetSample(X, Y, x_prueba, Npoints = int(1e4)):
     listPend = []
     listValoresY = []
     
-    for i in range(int(Npoints)):
+    for i in tqdm(range(int(Npoints))):
         inter, pend, valorY = getBootValues(X, Y, x_prueba)
 
         listInter.append(inter)

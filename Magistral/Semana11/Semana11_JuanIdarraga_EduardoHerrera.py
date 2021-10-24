@@ -40,6 +40,7 @@ def punto24():
 
 
 
+
 """  /// punto 25 \\\ """
 
 def punto25():
