@@ -24,3 +24,5 @@ print(integral)
 # 2.
 
 print(f'sigma = {np.sqrt(media)}')
+
+
