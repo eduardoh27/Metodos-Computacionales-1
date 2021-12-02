@@ -8,19 +8,13 @@ def funcion_de_onda( R, r):
     x = -(np.linalg.norm(r-R))
     return ((np.e**x)*(1/np.sqrt(np.pi)))**2
 
-# OK
-
 
 def U(r1,r2,R1,R2):
     r1 = np.array(r1)
     r2 = np.array(r2)
     if (np.linalg.norm(r1-r2) == 0) or (np.linalg.norm(R1-R2) == 0) or (np.linalg.norm(r1-R1) == 0) or (np.linalg.norm(r2-R1) == 0) or (np.linalg.norm(r1-R2) == 0) or (np.linalg.norm(r2-R2) == 0):
-        print(f'r1 = {r1}')
-        print(f'r2 = {r2}')
-        print(f'R1 = {R1}')
-        print(f'R2 = {R2}')
         c = 0
-    else :
+    else:
         c=((1/np.linalg.norm(r1-r2)) + (1/np.linalg.norm(R1-R2)) - (1/np.linalg.norm(r1-R1)) -( 1/np.linalg.norm(r2-R1)) - (1/np.linalg.norm(r1 - R2)) - (1/np.linalg.norm(r2-R2)))
     return c
 
@@ -61,7 +55,7 @@ def main():
     #a
     print(f'\na)')
 
-    L=2.
+    L=2
     R1=[0,0,L/2]
     R2=[0,0,-L/2]
     R1=np.array(R1)
@@ -75,7 +69,6 @@ def main():
     ax.scatter(e2[:,0],e2[:,1],e2[:,2],marker='.',color='b')
     ax.scatter(e1[:,0],e1[:,1],e1[:,2],marker='.',color='r')
     ax.scatter(0,0,0,marker='o',color='k',s=100)
-    plt.savefig("dibujo.png")
     #plt.show()
 
     Promedio = Potencial(e1 ,e2 ,R1, R2 )
@@ -97,15 +90,13 @@ def main():
         e2=Metropolis(funcion_de_onda, R2, d=3)
         potenciales.append(Potencial(e1,e2,R1,R2))
         
-    #print(potenciales)
     fig1 = plt.figure()
     ax1 = fig1.add_subplot()
     ax1.scatter(sep, potenciales)
     ax1.set_ylabel('<U(r)>')
     ax1.set_xlabel('r[A]')
     ax1.grid()
-    plt.savefig("graph.png")
-    #plt.show()
+    plt.show()
     
 if __name__ == '__main__':
     main()

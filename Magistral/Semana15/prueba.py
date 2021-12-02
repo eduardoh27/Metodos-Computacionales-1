@@ -25,10 +25,7 @@ def posicion_electron(funcion_p, R, seed=0.5,paso_=1, Npuntos = int(1e5)):
     return x
 
 def U (r1,r2,R1,R2):
-    print(f'r1 = {r1}')
-    print(f'r2 = {r2}')
-    print(f'R1 = {R1}')
-    print(f'R2 = {R2}')
+
     return ( (1/(np.linalg.norm(r1-r2))) + (1/(np.linalg.norm(R1-R2))) - (1/(np.linalg.norm(r1-R1))) - (1/(np.linalg.norm(r2-R1))) - (1/(np.linalg.norm(r2-R2))) - (1/(np.linalg.norm(r1-R2))) ) 
 
 L = 2
